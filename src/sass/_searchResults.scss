@@ -1,0 +1,41 @@
+.search-results {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.results {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.pagination {
+  margin-top: auto;
+  padding: 0 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__dots {
+    font-size: 2rem;
+    margin: 0 0.5rem 0rem 0.5rem;
+    color: $color-grey-dark-2;
+  }
+
+  &__btn--active {
+    background-color: $color-grad-2 !important;
+    color: $color-grey-light-1 !important;
+  }
+}
+
+.copyright {
+  color: $color-grey-dark-2;
+  font-size: 1.2rem;
+  padding: 0 3.5rem;
+  margin-top: 4rem;
+
+  .github-link:link,
+  .github-link:visited {
+    color: $color-grey-dark-2;
+  }
+}
