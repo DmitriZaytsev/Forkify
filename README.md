@@ -1,9 +1,10 @@
 # Forkify
 
 > Forkify is a project for someone, who likes delicious food, cooking and structured ES6+😋
+
 ![](README.assets/preview-site.png)
   
-Live site: <>
+Live site: <https://forkify-webapplication.netlify.app/>
 
 ### Used technologies
 
@@ -31,20 +32,29 @@ Live site: <>
 ### More about technologies
 
 1. Work with Forkify API (POST and GET requests) 
+<br>
 
-2. Use MVC architecture
+2. Use Parcel
+
+- transpiling JS and bundling modules
+- compiling SASS
+<br>
+
+3. Use MVC architecture
 
 ![](README.assets/forkify-architecture-recipe-loading.png)
 ![](README.assets/forkify-flowchart.png)
 <br>
 
-3. Use different Javascript features
+4. Use different Javascript features
 
->Classes, LocalStorage, window hash, rest and spread operators, shortcircuiting, optional chaining
+>Classes, LocalStorage, window hash, rest and spread operators, shortcircuiting, optional chaining and etc.
+<br>
 
-4. Use Fractional librery for working with fracttions
+5. Use Fractional librery for working with fracttions
+<br>
 
-5. Write JSDoc comment
+6. Write JSDoc comment
 
         /**
           * Render the received object to the DOM
@@ -70,7 +80,7 @@ Live site: <>
 
 <br>
 
-6. Create and use SVG-sprite
+7. Create and use SVG-sprite
 
         <svg class="nav__icon">
             <use href="src/img/icons.svg#icon-bookmark"></use>
@@ -78,9 +88,9 @@ Live site: <>
 
 <br>
 
-7. Use SASS
+8. Use SASS
 
-> - mixins, variables, nesting, extends(placeholder)
+> mixins, variables, nesting, extends(placeholders)
  
       %btn {
       background-image: $gradient;
@@ -111,7 +121,7 @@ Live site: <>
     }
 <br>
 
-8. Use different CSS selectors 
+9. Use different CSS selectors 
 
         & > *:first-child {
           margin-right: 1rem;
@@ -126,7 +136,7 @@ Live site: <>
         }
 <br>
 
-9. Use Grid Layout
+10. Use Grid Layout
 
         display: grid;
           grid-template-rows: 10rem minmax(100rem, auto);
@@ -145,14 +155,14 @@ Live site: <>
 
 ### Realized features
 
-1. Pagination, get data from API
+1. Get data from API and show pagination 
 
 >Pagination works so: 
->>1-6 pages - show this number of pages
->>more 6 pages - always show 1 and last page 
->>if current page  is 1 - show next page and "..." 
->>if current page is last - show "...", then previous page
->>if current page is middle - show "...", then previous page, next page and "..."
+> - 1-6 pages - show this number of pages
+> - more 6 pages - always show 1 and last page 
+> - if current page  is 1 - show next page and "..." 
+> - if current page is last - show "...", then previous page
+> - if current page is middle - show "...", then previous page, next page and "..."
 
 ![](README.assets/search-pagination.gif)
 
@@ -169,33 +179,35 @@ Live site: <>
 
 >also i didn't add code from controller.js and rest html code of recipe in this example
 
-          <div class="recipe__info-buttons">
-            <button class="btn--tiny btn--update-servings" data-update-to="${this._data.servings - 1
-      }">
-              <svg>
-                <use href="${icons}#icon-minus-circle"></use>
-              </svg>
-            </button>
-            <button class="btn--tiny btn--update-servings" data-update-to="${this._data.servings + 1
-      }">
+      <div class="recipe__info-buttons">
+        <button class="btn--tiny btn--update-servings" data-update-to="${this._data.servings - 1}">
+            <svg>
+              <use href="${icons}#icon-minus-circle"></use>
+            </svg>
+        </button>
+        <button class="btn--tiny btn--update-servings" data-update-to="${this._data.servings + 1}">
+            <svg>
+              <use href="${icons}#icon-plus-circle"></use>
+            </svg>
+        </button>
+      </div>
 
-        addHandlerUpdateServings(handler) {
-      this._parentElement.addEventListener('click', function (e) {
-        const btn = e.target.closest('.btn--update-servings');
-        if (!btn) return;
-        const { updateTo } = btn.dataset;
-        if (+updateTo > 0) handler(+updateTo);
-      });
-    }
+      addHandlerUpdateServings(handler) {
+          this._parentElement.addEventListener('click', function (e) {
+            const btn = e.target.closest('.btn--update-servings');
+            if (!btn) return;
+            const { updateTo } = btn.dataset;
+            if (+updateTo > 0) handler(+updateTo);
+        });
+      }
 
-    export const updateServings = function (newServings) {
-      state.recipe.ingredients.forEach(ing => {
-        ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
-        // newQt = (oldQt * newServings) / oldServings // 2 * 8 / 4 = 4
-      });
-
-      state.recipe.servings = newServings;
-    };
+      export const updateServings = function (newServings) {
+        state.recipe.ingredients.forEach(ing => {
+          ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
+          // newQt = (oldQt * newServings) / oldServings // 2 * 8 / 4 = 4
+        });
+        state.recipe.servings = newServings;
+      };
 
 
 ## 🚀Quick Setup
