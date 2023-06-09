@@ -5,7 +5,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "del-cli dist && parcel index.html --no-source-maps --open --no-cache",
-    "build": "del-cli dist && parcel build index.html --no-source-maps --no-optimize --no-content-hash"
+    "build": "del-cli dist && parcel build index.html --no-source-maps --no-optimize --no-content-hash --no-scope-hoist"
   },
   "author": "Zaitsev Dmitry",
   "license": "ISC",
