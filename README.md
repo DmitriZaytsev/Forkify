@@ -14,6 +14,7 @@ Live site: <https://forkify-webapplication.netlify.app/>
 - Forkify API
 - Fractional library
 - SASS
+- Dotenv
 
 ## Table of Contents
 

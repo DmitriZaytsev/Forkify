@@ -14,7 +14,7 @@ import 'regenerator-runtime/runtime';
 const checkAndChangeDelBtn = function () {
   if (model.state.bookmarks.length >= 2) bookmarksView.displayDelAllBtn();
   else bookmarksView.hideDelAllBtn();
-}
+};
 
 const controlRecipes = async function () {
   try {
@@ -57,7 +57,7 @@ const controlSearchResults = async function () {
     // 4) Render initial pagination buttons
     paginationView.render(model.state.search);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -106,7 +106,6 @@ const controlAddRecipe = async function (newRecipe) {
 
     // Upload the new recipe data
     await model.uploadRecipe(newRecipe);
-    // console.log(model.state.recipe);
 
     // Render recipe
     recipeView.render(model.state.recipe);
@@ -139,7 +138,7 @@ const controlDelBookmarks = async function () {
 
       //Delete bookmarks preview
       model.state.bookmarks = [];
-      bookmarksView.render(model.state.bookmarks)
+      bookmarksView.render(model.state.bookmarks);
 
 
       //Delete filled in recipe
@@ -156,7 +155,7 @@ const controlDelBookmarks = async function () {
     console.error('💥', err);
     addRecipeView.renderError(err.message);
   }
-}
+};
 
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);

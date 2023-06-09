@@ -48,9 +48,7 @@ class AddRecipeView extends View {
   }
 
   _saveInitialForm() {
-    // this._initialForm = this._parentElement.cloneNode(true);
     this._initialForm = this._parentElement.innerHTML;
-    console.log(this._initialForm);
   }
 
   pasteInitialForm = () => this._parentElement.innerHTML = this._initialForm;
