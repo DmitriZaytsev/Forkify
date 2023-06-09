@@ -215,7 +215,7 @@ Live site: <https://forkify-webapplication.netlify.app/>
 
 1.  Clone this repository:
 
-        git clone https://github.com/DmitriZaytsev/RecipeHub.git
+        git clone https://github.com/DmitriZaytsev/Forkify.git
 
 2.  Install npm packages:
 
